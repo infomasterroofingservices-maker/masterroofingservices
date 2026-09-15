@@ -4,15 +4,20 @@ import { Projects } from "@/components/projects";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `Projects | ${site.name}`,
+  title: `Our Work | ${site.name}`,
   description:
-    "Recent residential roofing, restoration, replacement and repair work completed by Master Roofing Services.",
+    "See recent jobs from Master Roofing Services — photos and video from work completed by our team.",
 };
 
 export default function ProjectsPage() {
   return (
     <main id="main-content">
-      <PageHero title="Projects" />
+      <PageHero
+        title="Our Work"
+        subtitle="Jobs completed by our team"
+        image="/projects/1.jpeg"
+        fill="#111111"
+      />
       <Projects />
     </main>
   );

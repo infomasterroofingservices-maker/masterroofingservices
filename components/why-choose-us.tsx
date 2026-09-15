@@ -1,9 +1,14 @@
 import { Reveal } from "@/components/reveal";
+import { RoofPeak } from "@/components/roof-peak";
 import { whyItems } from "@/lib/site";
 
 export function WhyChooseUs() {
   return (
-    <section id="why-choose-us" className="border-t border-white/10 bg-[#111111] py-20 sm:py-24 lg:py-28">
+    <section
+      id="why-choose-us"
+      className="relative bg-[#111111] py-20 sm:py-24 lg:py-28"
+    >
+      <RoofPeak fill="#111111" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.22em] text-gold">

@@ -7,11 +7,11 @@ export function Founder() {
   return (
     <section
       id="founder"
-      className="relative border-t border-white/10 bg-[#111111] py-20 sm:py-24 lg:py-28"
+      className="relative bg-[#111111] py-20 sm:py-24 lg:py-28"
       aria-labelledby="founder-heading"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        <p className="absolute -top-6 right-0 select-none font-display text-[clamp(6rem,18vw,14rem)] font-extrabold leading-none tracking-tight text-white/[0.035] sm:-top-10">
+        <p className="absolute top-2 right-0 select-none font-display text-[clamp(6rem,18vw,14rem)] font-extrabold leading-none tracking-tight text-white/[0.035] sm:top-4">
           FOUNDER
         </p>
       </div>
@@ -43,15 +43,6 @@ export function Founder() {
         </Reveal>
 
         <Reveal delay={100} className="pt-6 lg:pt-0">
-          <div
-            className="mb-3 grid w-6 grid-cols-2 gap-0.5 sm:w-7"
-            aria-hidden="true"
-          >
-            <span className="aspect-square bg-lemon" />
-            <span className="aspect-square bg-white" />
-            <span className="aspect-square bg-white" />
-            <span className="aspect-square bg-lemon" />
-          </div>
           <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
             Meet the Founder
           </p>

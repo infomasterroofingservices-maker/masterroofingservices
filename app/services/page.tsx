@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
-import { Process } from "@/components/process";
 import { Services } from "@/components/services";
 import { site } from "@/lib/site";
 
@@ -13,9 +12,8 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <main id="main-content">
-      <PageHero title="Services" />
+      <PageHero title="Services" image="/images/Service1.jpeg" fill="#f7f6f2" />
       <Services />
-      <Process />
     </main>
   );
 }

@@ -5,18 +5,16 @@ export const site = {
   description:
     "Professional roofing repairs, restoration, replacement and maintenance from Master Roofing Services. Quality workmanship and dependable service.",
   phone: "0414 947 902",
-  emails: [
-    "Info@masteroutdoor.com.au",
-    "Preet.masterroofingservices@gmail.com",
-  ],
+  emails: ["preet.masterroofingservices@gmail.com"],
   address: "Bradbury, NSW 2560",
+  serviceArea: "Bradbury & surrounding NSW",
 } as const;
 
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Services" },
-  { href: "/projects", label: "Projects" },
+  { href: "/projects", label: "Our Work" },
   { href: "/contact", label: "Contact Us" },
 ] as const;
 
@@ -68,15 +66,15 @@ export const homeHighlights = [
 ] as const;
 
 export const serviceTags = [
-  "Roofing",
-  "Landscaping",
-  "Decking",
-  "Fencing",
-  "Paving",
-  "Pergolas & Patios",
-  "Retaining Walls",
-  "Outdoor Living",
-  "Property Maintenance",
+  { label: "Roofing", href: "#roofing" },
+  { label: "Landscaping", href: "#landscaping" },
+  { label: "Decking", href: "#decking" },
+  { label: "Fencing", href: "#fencing" },
+  { label: "Paving", href: "#paving" },
+  { label: "Pergolas & Patios", href: "#decking" },
+  { label: "Retaining Walls", href: "#landscaping" },
+  { label: "Outdoor Living", href: "#decking" },
+  { label: "Property Maintenance", href: "#roofing" },
 ] as const;
 
 export const services = [
@@ -84,27 +82,23 @@ export const services = [
     id: "roofing",
     title: "Roofing",
     description:
-      "The roof is the first line of defence. We install, restore and maintain complete roof systems so the home stays dry, ventilated and ready for heat, rain and storm season.",
+      "We install, restore and maintain complete roof systems so the home stays dry and ready for heat, rain and storm season.",
     image: "/images/Service1.jpeg",
     alt: "Residential home with a completed architectural shingle roof",
     items: [
       "New roof installation and replacement",
       "Roof restoration and repairs",
-      "Roof inspections",
       "Roof leak repairs",
       "Tile and metal roofing",
-      "Ridge capping and repointing",
-      "Flashings, sarking and roof ventilation",
-      "Gutter and downpipe installation or repairs",
-      "Roof cleaning, painting and maintenance",
-      "Skylights and whirlybirds",
+      "Gutters, flashings and ventilation",
+      "Roof inspections and maintenance",
     ],
   },
   {
     id: "landscaping",
     title: "Landscaping",
     description:
-      "Outdoor spaces planned around the block, the climate and how you live. From a full garden makeover to turf, planting and drainage, the finish is clean and built to last.",
+      "Outdoor spaces planned around the block and how you live — from a garden makeover to turf, planting and drainage.",
     image: "/images/service2.png",
     alt: "Landscaped garden and outdoor beds around a residential property",
     items: [
@@ -112,10 +106,7 @@ export const services = [
       "Garden makeovers and garden beds",
       "Turf and lawn installation",
       "Retaining walls",
-      "Paving and pathways",
       "Planting, mulching and edging",
-      "Soil, gravel and decorative stone",
-      "Garden maintenance",
       "Drainage and excavation",
     ],
   },
@@ -123,29 +114,27 @@ export const services = [
     id: "decking",
     title: "Decking & Outdoor Living",
     description:
-      "Decks, pergolas and entertaining areas built for everyday use. Timber or composite, repaired or new — the structure is solid and the finish is made to be lived on.",
+      "Decks, pergolas and entertaining areas built for everyday use — timber or composite, repaired or new.",
     image: "/images/service3.png",
     alt: "Timber deck and outdoor living space",
     items: [
       "Timber and composite decking",
-      "Deck installation, repairs and restoration",
+      "Deck installation and repairs",
       "Pergolas and patios",
       "Outdoor entertaining areas",
-      "Privacy screens and balustrades",
     ],
   },
   {
     id: "fencing",
     title: "Fencing & Gates",
     description:
-      "Boundary, privacy and pool fencing that sits properly on the line and lasts in Australian conditions. Gates are hung, aligned and finished as part of the same job.",
+      "Boundary, privacy and pool fencing that sits properly on the line, with gates hung and finished as part of the same job.",
     image: "/images/service4.png",
     alt: "Timber fence and gate on a residential property",
     items: [
       "Timber and Colorbond fencing",
       "Boundary and privacy fencing",
       "Pool fencing",
-      "Picket and slat fencing",
       "Gate installation and repairs",
     ],
   },
@@ -153,14 +142,13 @@ export const services = [
     id: "paving",
     title: "Paving & Hardscaping",
     description:
-      "Driveways, paths and outdoor floors with a proper base, clean lines and a surface that holds up to weather and daily use. Repairs and sealing included where the existing work can be saved.",
+      "Driveways, paths and outdoor floors with a proper base, clean lines and a surface that holds up to weather and daily use.",
     image: "/images/service5.png",
     alt: "Paved driveway and outdoor hardscaping",
     items: [
       "Driveways and pathways",
       "Brick, concrete and stone paving",
-      "Outdoor areas and patio paving",
-      "Garden steps and edging",
+      "Patio paving, steps and edging",
       "Paver repairs and sealing",
     ],
   },
@@ -199,42 +187,30 @@ export const whyItems = [
   },
 ] as const;
 
-export const projects = [
+export const howWeWorkSteps = [
   {
-    title: "Residential Roofing",
-    caption: "Completed architectural shingle installation",
-    image: "/images/project-1.jpg",
-    aspect: "aspect-[4/3]",
+    number: "01",
+    title: "Free Quote & Consultation",
+    description:
+      "Contact us through the form or call the team to discuss your project. We will look at the job with you, share a professional opinion and talk through clear pricing options.",
   },
   {
-    title: "Roof Restoration",
-    caption: "Careful material replacement and surface renewal",
-    image: "/images/project-2.jpg",
-    aspect: "aspect-[3/4]",
+    number: "02",
+    title: "Planning & Site Prep",
+    description:
+      "We plan the job properly and prep the site so the structure is sound, the work runs cleanly and the finish is right.",
   },
   {
-    title: "Roof Replacement",
-    caption: "Full tear-off and new roof system",
-    image: "/images/project-3.jpg",
-    aspect: "aspect-[4/3]",
+    number: "03",
+    title: "Construction & Installation",
+    description:
+      "Our crew completes the work professionally, safely and to the standard our clients have come to expect.",
   },
   {
-    title: "Roof Repair",
-    caption: "Targeted repair around flashing and chimney",
-    image: "/images/project-4.jpg",
-    aspect: "aspect-square",
-  },
-  {
-    title: "Gutter Services",
-    caption: "Clean fascia, edge and water management",
-    image: "/images/project-5.jpg",
-    aspect: "aspect-[3/4]",
-  },
-  {
-    title: "Storm Damage",
-    caption: "Assessment and recovery after severe weather",
-    image: "/images/project-6.jpg",
-    aspect: "aspect-[4/3]",
+    number: "04",
+    title: "Completion & Quality Check",
+    description:
+      "We make sure everything is finished properly — aligned, secured, built correctly and left ready to use.",
   },
 ] as const;
 

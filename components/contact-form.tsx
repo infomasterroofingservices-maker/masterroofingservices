@@ -80,10 +80,15 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <p className="text-base leading-relaxed text-white/80">
-        Thank you. Your quote request has been received. A team member will
-        follow up using the details you provided.
-      </p>
+      <div className="mt-8 border border-white/15 bg-white/5 p-6">
+        <p className="font-display text-xl font-extrabold tracking-wide text-lemon">
+          Request received
+        </p>
+        <p className="mt-3 text-base leading-relaxed text-white/80">
+          Thank you. Your quote request has been received. A team member will
+          follow up using the details you provided.
+        </p>
+      </div>
     );
   }
 
@@ -152,7 +157,7 @@ export function ContactForm() {
           </option>
         </select>
         {errors.service ? (
-          <p id="quote-service-error" className="mt-2 text-sm text-[#F7EB4F]" role="alert">
+          <p id="quote-service-error" className="mt-2 text-sm text-danger" role="alert">
             {errors.service}
           </p>
         ) : null}
@@ -173,13 +178,13 @@ export function ContactForm() {
           className={`${fieldClass} resize-y`}
         />
         {errors.message ? (
-          <p id="quote-message-error" className="mt-2 text-sm text-[#F7EB4F]" role="alert">
+          <p id="quote-message-error" className="mt-2 text-sm text-danger" role="alert">
             {errors.message}
           </p>
         ) : null}
       </div>
       {formError ? (
-        <p className="text-sm text-[#F7EB4F]" role="alert">
+        <p className="text-sm text-danger" role="alert">
           {formError}
         </p>
       ) : null}
@@ -229,7 +234,7 @@ function Field({
         className={fieldClass}
       />
       {error ? (
-        <p id={errorId} className="mt-2 text-sm text-[#F7EB4F]" role="alert">
+        <p id={errorId} className="mt-2 text-sm text-danger" role="alert">
           {error}
         </p>
       ) : null}
