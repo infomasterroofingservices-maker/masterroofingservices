@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { DM_Sans, Libre_Baskerville } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Navbar } from "@/components/navbar";
 import { Cta } from "@/components/cta";
 import { CtaGate } from "@/components/cta-gate";
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Cta />
         </CtaGate>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

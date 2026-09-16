@@ -3,7 +3,7 @@ import { About } from "@/components/about";
 import { Founder } from "@/components/founder";
 import { PageHero } from "@/components/page-hero";
 import { WhyChooseUs } from "@/components/why-choose-us";
-import { images, site } from "@/lib/site";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: `About Us | ${site.name}`,
@@ -17,7 +17,6 @@ export default function AboutPage() {
       <PageHero
         title="About Us"
         subtitle="Built to protect what matters"
-        image={images.about}
       />
       <Founder />
       <About />

@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { BrandMark } from "@/components/brand-mark";
 import { RoofPeak } from "@/components/roof-peak";
+import { images } from "@/lib/site";
 
 type PageHeroProps = {
   title: string;
   subtitle?: string;
-  image: string;
+  image?: string;
   fill?: string;
   peak?: boolean;
 };
@@ -13,7 +14,7 @@ type PageHeroProps = {
 export function PageHero({
   title,
   subtitle,
-  image,
+  image = images.hero,
   fill = "#111111",
   peak = true,
 }: PageHeroProps) {
@@ -26,7 +27,7 @@ export function PageHero({
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_70%]"
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/55 to-black/35" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/25" />

@@ -15,8 +15,6 @@ export default function ProjectsPage() {
       <PageHero
         title="Our Work"
         subtitle="Jobs completed by our team"
-        image="/projects/1.jpeg"
-        fill="#111111"
       />
       <Projects />
     </main>
