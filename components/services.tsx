@@ -58,7 +58,7 @@ export function Services() {
               >
                 <Image
                   src={service.image}
-                  alt={service.alt || service.title}
+                  alt={service.alt}
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover object-center"
