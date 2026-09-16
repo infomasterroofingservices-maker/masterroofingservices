@@ -62,12 +62,6 @@ h5 {
   outline-offset: 3px;
 }
 
-#quote-service,
-#quote-service option {
-  background-color: #111111;
-  color: #ffffff;
-}
-
 @keyframes fade-up {
   from {
     opacity: 0;

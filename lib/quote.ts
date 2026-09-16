@@ -4,25 +4,33 @@ export type QuoteInput = {
   name: string;
   phone: string;
   email: string;
-  service: string;
+  service: string[];
   message: string;
 };
 
 export type QuoteField = keyof QuoteInput;
 export type QuoteFieldErrors = Partial<Record<QuoteField, string>>;
 
-export const quoteServiceValues = [
-  ...services.map((service) => service.title),
-  "Other",
+export const quoteServiceOptions = [
+  ...services.map((service) => ({
+    value: service.title,
+    label: service.title,
+  })),
+  { value: "Other", label: "Other / Not sure" },
 ] as const;
 
-const MAX_LENGTHS: Record<QuoteField, number> = {
+export const quoteServiceValues = quoteServiceOptions.map(
+  (option) => option.value,
+);
+
+export type QuoteServiceValue = (typeof quoteServiceValues)[number];
+
+const MAX_LENGTHS = {
   name: 120,
   phone: 40,
   email: 254,
-  service: 80,
   message: 4000,
-};
+} as const;
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_ALLOWED = /^[+\d\s().-]+$/;
@@ -34,7 +42,7 @@ export function parseQuoteBody(body: unknown): QuoteInput {
     name: readString(record.name),
     phone: readString(record.phone),
     email: readString(record.email),
-    service: readString(record.service),
+    service: readServices(record.service),
     message: readString(record.message),
   };
 }
@@ -46,7 +54,7 @@ export function validateQuote(
     name: input.name.trim(),
     phone: input.phone.trim(),
     email: input.email.trim(),
-    service: input.service.trim(),
+    service: normalizeServices(input.service),
     message: input.message.trim(),
   };
   const errors: QuoteFieldErrors = {};
@@ -78,9 +86,9 @@ export function validateQuote(
     errors.email = "Please enter a valid email address.";
   }
 
-  if (!data.service) {
-    errors.service = "Please select a service.";
-  } else if (!quoteServiceValues.includes(data.service as (typeof quoteServiceValues)[number])) {
+  if (data.service.length === 0) {
+    errors.service = "Please select at least one service.";
+  } else if (data.service.some((item) => !isQuoteServiceValue(item))) {
     errors.service = "Please select a valid service.";
   }
 
@@ -103,6 +111,44 @@ export function firstNameFrom(name: string) {
   return name.trim().split(/\s+/)[0] || "there";
 }
 
+export function formatQuoteServices(service: string[]) {
+  return service
+    .map((item) => (item === "Other" ? "Other / Not sure" : item))
+    .join(", ");
+}
+
 function readString(value: unknown) {
   return typeof value === "string" ? value : "";
+}
+
+function readServices(value: unknown) {
+  if (Array.isArray(value)) return normalizeServices(value);
+  if (typeof value === "string") return normalizeServices([value]);
+  return [];
+}
+
+function normalizeServices(value: unknown[]) {
+  const seen = new Set<string>();
+  const selected: string[] = [];
+
+  for (const item of value) {
+    if (typeof item !== "string") continue;
+    const trimmed = item.trim();
+    if (!trimmed || seen.has(trimmed)) continue;
+    seen.add(trimmed);
+    selected.push(trimmed);
+  }
+
+  return selected.sort(
+    (a, b) => serviceOrder(a) - serviceOrder(b),
+  );
+}
+
+function isQuoteServiceValue(value: string): value is QuoteServiceValue {
+  return quoteServiceValues.includes(value as QuoteServiceValue);
+}
+
+function serviceOrder(value: string) {
+  const index = quoteServiceValues.indexOf(value as QuoteServiceValue);
+  return index === -1 ? quoteServiceValues.length : index;
 }

@@ -1,4 +1,4 @@
-import type { QuoteInput } from "@/lib/quote";
+import { formatQuoteServices, type QuoteInput } from "@/lib/quote";
 import {
   detailRow,
   escapeHtml,
@@ -13,7 +13,7 @@ export function renderAdminQuoteEmail(quote: QuoteInput) {
   const name = escapeHtml(quote.name);
   const phone = escapeHtml(quote.phone);
   const email = escapeHtml(quote.email);
-  const service = escapeHtml(quote.service === "Other" ? "Other / Not sure" : quote.service);
+  const service = escapeHtml(formatQuoteServices(quote.service));
   const message = escapeMultilineHtml(quote.message);
   const mailto = `mailto:${encodeURIComponent(quote.email)}`;
 
@@ -47,7 +47,7 @@ export function renderAdminQuoteEmail(quote: QuoteInput) {
 
   return wrapEmail({
     title: ADMIN_QUOTE_SUBJECT,
-    preview: `New quote request from ${quote.name} — ${quote.service === "Other" ? "Other / Not sure" : quote.service}`,
+    preview: `New quote request from ${quote.name} — ${formatQuoteServices(quote.service)}`,
     heading: "New Quote Request",
     body,
   });

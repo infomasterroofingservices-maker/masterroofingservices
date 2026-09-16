@@ -8,16 +8,16 @@ import { serviceTags, services } from "@/lib/site";
 export function Services() {
   return (
     <>
-      <section id="services" className="bg-background pb-12 sm:pb-16 lg:pb-20">
+      <section id="services" className="bg-[#111111] pb-12 sm:pb-16 lg:pb-20">
         <div className="mx-auto w-full min-w-0 max-w-7xl px-4 pt-12 sm:px-8 sm:pt-20 lg:pt-24">
           <Reveal>
             <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.22em] text-gold sm:mb-3">
               Our Services
             </p>
-            <h2 className="max-w-3xl text-[1.75rem] font-extrabold tracking-tight text-foreground text-balance sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
+            <h2 className="max-w-3xl text-[1.75rem] font-extrabold tracking-tight text-white text-balance sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
               Roofing Services Built For Lasting Protection
             </h2>
-            <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-muted sm:mt-4 sm:text-[17px]">
+            <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-white/70 sm:mt-4 sm:text-[17px]">
               New roof installation, repairs, restorations, metal roofing,
               painting, gutters, terracotta work, carports and patios —
               professional care that protects your home.
@@ -30,7 +30,7 @@ export function Services() {
                 <li key={tag.label}>
                   <a
                     href={tag.href}
-                    className="block border border-foreground/15 px-3 py-2 text-[10px] font-medium uppercase tracking-[0.14em] text-foreground/80 transition-colors hover:border-gold hover:text-foreground sm:px-4 sm:text-xs sm:tracking-[0.16em]"
+                    className="block border border-white/20 px-3 py-2 text-[10px] font-medium uppercase tracking-[0.14em] text-white/80 transition-colors hover:border-gold hover:text-white sm:px-4 sm:text-xs sm:tracking-[0.16em]"
                   >
                     {tag.label}
                   </a>

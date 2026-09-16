@@ -1,4 +1,4 @@
-import { firstNameFrom, type QuoteInput } from "@/lib/quote";
+import { firstNameFrom, formatQuoteServices, type QuoteInput } from "@/lib/quote";
 import {
   escapeHtml,
   escapeMultilineHtml,
@@ -11,7 +11,7 @@ export const CUSTOMER_CONFIRMATION_SUBJECT =
 
 export function renderCustomerConfirmationEmail(quote: QuoteInput) {
   const firstName = escapeHtml(firstNameFrom(quote.name));
-  const service = escapeHtml(quote.service === "Other" ? "Other / Not sure" : quote.service);
+  const service = escapeHtml(formatQuoteServices(quote.service));
   const message = escapeMultilineHtml(quote.message);
 
   const body = `
