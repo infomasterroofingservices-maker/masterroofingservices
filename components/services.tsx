@@ -19,8 +19,9 @@ export function Services() {
             </h2>
             <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-white/70 sm:mt-4 sm:text-[17px]">
               New roof installation, repairs, restorations, metal roofing,
-              painting, gutters, terracotta work, carports and patios —
-              professional care that protects your home.
+              painting, gutters, terracotta work, carports, patios, solar panel
+              cleaning and driveway work — professional care that protects your
+              home.
             </p>
           </Reveal>
 

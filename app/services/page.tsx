@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: `Services | ${site.name}`,
   description:
-    "New roof installation, repairs, restoration, metal roofing, painting, gutters, terracotta restoration, carports and patios from Master Roofing Services.",
+    "New roof installation, repairs, restoration, metal roofing, painting, gutters, terracotta restoration, carports, patios, solar panel cleaning, bird mesh and driveway wash and paint from Master Roofing Services.",
 };
 
 export default function ServicesPage() {

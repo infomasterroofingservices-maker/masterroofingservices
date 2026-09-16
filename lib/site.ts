@@ -88,7 +88,7 @@ export const services = [
     title: "Metal Roofing",
     description:
       "Durable metal roofing solutions designed to provide long-lasting protection and a clean, modern finish.",
-    image: "/images/metal-roofing.avif",
+    image: "/images/metal-roof.png",
     alt: "Metal roofing by Master Roofing Services",
     details: [
       "Metal and Colorbond roof installation",
@@ -165,6 +165,34 @@ export const services = [
       "Shade and weather protection for outdoor areas",
       "A clean finish that sits well with the home",
       "Secure, tidy installation from structure through to the roof edge",
+    ],
+  },
+  {
+    id: "solar-panel-cleaning-and-bird-mesh",
+    title: "Solar Panel Cleaning and Bird Mesh",
+    description:
+      "Solar panel cleaning and bird mesh installation to help keep panels working efficiently and protected from pests.",
+    image: "/images/solar-cleaning.avif",
+    alt: "Solar panel cleaning and bird mesh by Master Roofing Services",
+    details: [
+      "Solar panels cleaned to remove dirt, dust and buildup",
+      "Bird mesh fitted to help keep pests out from under the panels",
+      "Work completed carefully around existing roofing and solar hardware",
+      "Site left tidy at handover",
+    ],
+  },
+  {
+    id: "driveway-wash-and-paint",
+    title: "Driveway Wash and Paint",
+    description:
+      "Pressure washing and protective coatings to clean, refresh and help protect your driveway.",
+    image: "/images/driveway.png",
+    alt: "Driveway wash and paint by Master Roofing Services",
+    details: [
+      "Driveway pressure washed to remove dirt, stains and buildup",
+      "Surface prepared before coatings are applied",
+      "Durable coatings for a refreshed, more even finish",
+      "Work aimed at improving appearance and surface protection",
     ],
   },
 ] as const;
