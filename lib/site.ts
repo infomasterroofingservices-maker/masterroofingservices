@@ -355,7 +355,7 @@ export const founder = {
 
 export const images = {
   hero: "/images/Home.avif",
-  about: "/images/about.jpg",
+  about: "/projects/14.jpeg",
   cta: "/images/cta-bg.jpg",
   founder: founder.image,
 } as const;

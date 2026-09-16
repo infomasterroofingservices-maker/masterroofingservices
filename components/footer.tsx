@@ -4,7 +4,7 @@ import { Logo } from "@/components/logo";
 import { navLinks, phoneHref, services, site } from "@/lib/site";
 
 const linkClass =
-  "flex min-h-9 min-w-0 items-center py-1 font-display text-xs font-extrabold uppercase leading-snug tracking-wide text-white/70 transition-colors hover:text-white sm:min-h-11 sm:text-sm";
+  "flex min-h-10 min-w-0 items-center py-1 font-display text-xs font-extrabold uppercase leading-snug tracking-wide text-white/70 transition-colors hover:text-white sm:min-h-11 sm:text-sm";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -13,8 +13,8 @@ export function Footer() {
     <footer className="bg-dark text-white">
       <div className="h-px bg-gradient-to-r from-transparent via-lemon/70 to-transparent" />
       <div className="mx-auto max-w-7xl px-4 pt-7 pb-6 sm:px-8 sm:pt-14 sm:pb-12 lg:pt-16 lg:pb-14">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-7 lg:grid-cols-[1.3fr_0.8fr_0.9fr_1.1fr] lg:gap-12">
-          <div className="col-span-2 lg:col-span-1">
+        <div className="grid grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-[1.3fr_0.8fr_0.9fr_1.1fr] lg:items-start lg:gap-12">
+          <div>
             <Logo compact />
             <p className="mt-3 hidden max-w-sm text-sm leading-relaxed text-white/60 sm:block">
               {site.name} provides professional roofing repairs, restoration,
@@ -30,7 +30,10 @@ export function Footer() {
             <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-gold sm:text-[11px]">
               Navigation
             </p>
-            <nav className="mt-2.5 flex flex-col sm:mt-5" aria-label="Footer">
+            <nav
+              className="mt-3 grid grid-cols-2 gap-x-4 gap-y-0 sm:mt-5 sm:grid-cols-3 lg:flex lg:flex-col"
+              aria-label="Footer"
+            >
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href} className={linkClass}>
                   {link.label}
@@ -43,7 +46,10 @@ export function Footer() {
             <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-gold sm:text-[11px]">
               Services
             </p>
-            <nav className="mt-2.5 flex flex-col sm:mt-5" aria-label="Footer services">
+            <nav
+              className="mt-3 grid grid-cols-2 gap-x-4 gap-y-0 sm:mt-5 sm:grid-cols-3 lg:flex lg:flex-col"
+              aria-label="Footer services"
+            >
               {services.map((service) => (
                 <Link
                   key={service.id}
@@ -56,7 +62,7 @@ export function Footer() {
             </nav>
           </div>
 
-          <div className="col-span-2 lg:col-span-1">
+          <div>
             <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-gold sm:text-[11px]">
               Contact
             </p>
@@ -88,19 +94,19 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10 pb-[env(safe-area-inset-bottom)]">
-        <div className="mx-auto flex max-w-7xl flex-col items-start gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-8 sm:py-5">
-          <p className="text-[11px] text-white/40 sm:text-xs sm:text-white/45">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 px-4 py-4 text-center sm:flex-row sm:justify-between sm:gap-4 sm:px-8 sm:py-5 sm:text-left">
+          <p className="text-[11px] leading-relaxed text-white/45 sm:text-xs">
             © {year} {site.name}. All rights reserved.
           </p>
           <a
             href="https://adityajain-os.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-[11px] text-white/55 transition-colors hover:border-white/35 hover:bg-white/10 sm:text-xs"
+            className="inline-flex min-h-10 w-full max-w-sm items-center justify-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-2 text-[11px] text-white/55 transition-colors hover:border-white/35 hover:bg-white/10 sm:min-h-0 sm:w-auto sm:justify-start sm:py-1.5 sm:text-xs"
           >
             Designed &amp; developed by{" "}
             <span className="font-medium text-white">Aditya Jain</span>
-            <ArrowUpRight className="h-3.5 w-3.5 text-white/70" strokeWidth={2} />
+            <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-white/70" strokeWidth={2} />
           </a>
         </div>
       </div>
