@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: `Contact Us | ${site.name}`,
   description:
-    "Request a free quote from Master Roofing Services for roofing, landscaping, decking, fencing, paving and outdoor living work.",
+    "Request a free quote from Master Roofing Services for new roof installation, repairs, restorations, metal roofing, painting, gutters, terracotta work, carports and patios.",
 };
 
 export default function ContactPage() {

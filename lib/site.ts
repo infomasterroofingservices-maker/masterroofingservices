@@ -26,133 +26,161 @@ export function getPhoneHref(phone: string = site.phone) {
 
 export const phoneHref = getPhoneHref();
 
-export const homeHighlights = [
-  {
-    title: "Roofing",
-    href: "/services#roofing",
-    description:
-      "New roofs, restorations, leak repairs, gutters, flashings and ongoing maintenance.",
-    image: "/images/Service1.jpeg",
-    alt: "Residential home with a completed architectural shingle roof",
-  },
-  {
-    title: "Landscaping",
-    href: "/services#landscaping",
-    description: "Garden makeovers, turf, retaining walls, planting and outdoor beds.",
-    image: "/images/service2.png",
-    alt: "Landscaped outdoor area around a residential property",
-  },
-  {
-    title: "Decking",
-    href: "/services#decking",
-    description: "Timber and composite decks, pergolas, patios and outdoor rooms.",
-    image: "/images/service3.png",
-    alt: "Outdoor living and decking work",
-  },
-  {
-    title: "Fencing",
-    href: "/services#fencing",
-    description: "Timber, Colorbond, privacy, pool fencing and gate installs.",
-    image: "/images/service4.png",
-    alt: "Fence and gate installation on a residential property",
-  },
-  {
-    title: "Paving",
-    href: "/services#paving",
-    description: "Driveways, pathways, patio paving, steps, edging and sealing.",
-    image: "/images/service5.png",
-    alt: "Paving and hardscaping on a residential site",
-  },
-] as const;
-
-export const serviceTags = [
-  { label: "Roofing", href: "#roofing" },
-  { label: "Landscaping", href: "#landscaping" },
-  { label: "Decking", href: "#decking" },
-  { label: "Fencing", href: "#fencing" },
-  { label: "Paving", href: "#paving" },
-  { label: "Pergolas & Patios", href: "#decking" },
-  { label: "Retaining Walls", href: "#landscaping" },
-  { label: "Outdoor Living", href: "#decking" },
-  { label: "Property Maintenance", href: "#roofing" },
-] as const;
-
 export const services = [
   {
-    id: "roofing",
-    title: "Roofing",
+    id: "roof-installation",
+    title: "Roof Installation",
     description:
-      "We install, restore and maintain complete roof systems so the home stays dry and ready for heat, rain and storm season.",
+      "Professional installation of new roofs, built to protect your property and provide a durable, long-lasting finish.",
     image: "/images/Service1.jpeg",
-    alt: "Residential home with a completed architectural shingle roof",
-    items: [
-      "New roof installation and replacement",
-      "Roof restoration and repairs",
-      "Roof leak repairs",
-      "Tile and metal roofing",
-      "Gutters, flashings and ventilation",
-      "Roof inspections and maintenance",
+    alt: "New roof installation by Master Roofing Services",
+    details: [
+      "New roof design and complete installation",
+      "Materials selected to suit the property and climate",
+      "Flashings, ridges, valleys and finishing details completed properly",
+      "Site kept protected and left tidy at handover",
     ],
   },
   {
-    id: "landscaping",
-    title: "Landscaping",
+    id: "roof-repairs",
+    title: "Roof Repairs",
     description:
-      "Outdoor spaces planned around the block and how you live — from a garden makeover to turf, planting and drainage.",
-    image: "/images/service2.png",
-    alt: "Landscaped garden and outdoor beds around a residential property",
-    items: [
-      "Complete garden landscaping",
-      "Garden makeovers and garden beds",
-      "Turf and lawn installation",
-      "Retaining walls",
-      "Planting, mulching and edging",
-      "Drainage and excavation",
+      "Professional roof repairs to address damage, wear and general roofing issues while helping protect your property.",
+    image: "/images/roof-repair.png",
+    alt: "Residential roof repairs by Master Roofing Services",
+    details: [
+      "Damaged tiles, sheets, flashings and ridges repaired",
+      "Storm damage, wear and general roofing issues addressed",
+      "Targeted repairs to help extend the life of the roof",
+      "Property protected throughout the work",
     ],
   },
   {
-    id: "decking",
-    title: "Decking & Outdoor Living",
+    id: "roof-leak-repairs",
+    title: "Roof Leak Repairs",
     description:
-      "Decks, pergolas and entertaining areas built for everyday use — timber or composite, repaired or new.",
-    image: "/images/service3.png",
-    alt: "Timber deck and outdoor living space",
-    items: [
-      "Timber and composite decking",
-      "Deck installation and repairs",
-      "Pergolas and patios",
-      "Outdoor entertaining areas",
+      "Identify and repair roof leaks to help prevent water damage and keep your property protected.",
+    image: "/images/roof-leaking.png",
+    alt: "Roof leak repair work by Master Roofing Services",
+    details: [
+      "Leak source identified before repairs begin",
+      "Flashings, valleys, penetrations and weak points checked",
+      "Repairs completed to help stop water entering the home",
+      "Clear advice on how to keep the roof watertight",
     ],
   },
   {
-    id: "fencing",
-    title: "Fencing & Gates",
+    id: "roof-restoration",
+    title: "Roof Restoration",
     description:
-      "Boundary, privacy and pool fencing that sits properly on the line, with gates hung and finished as part of the same job.",
-    image: "/images/service4.png",
-    alt: "Timber fence and gate on a residential property",
-    items: [
-      "Timber and Colorbond fencing",
-      "Boundary and privacy fencing",
-      "Pool fencing",
-      "Gate installation and repairs",
+      "Restore ageing or weathered roofs with professional repairs, preparation and restoration work.",
+    image: "/images/roof-restoration.png",
+    alt: "Roof restoration work by Master Roofing Services",
+    details: [
+      "Ageing or weathered surfaces prepared for restoration",
+      "Repairs completed before coatings or finishing work",
+      "Protective restoration to improve appearance and condition",
+      "A longer-lasting finish without a full roof replacement, where suitable",
     ],
   },
   {
-    id: "paving",
-    title: "Paving & Hardscaping",
+    id: "metal-roofing",
+    title: "Metal Roofing",
     description:
-      "Driveways, paths and outdoor floors with a proper base, clean lines and a surface that holds up to weather and daily use.",
-    image: "/images/service5.png",
-    alt: "Paved driveway and outdoor hardscaping",
-    items: [
-      "Driveways and pathways",
-      "Brick, concrete and stone paving",
-      "Patio paving, steps and edging",
-      "Paver repairs and sealing",
+      "Durable metal roofing solutions designed to provide long-lasting protection and a clean, modern finish.",
+    image: "/images/metal-roofing.avif",
+    alt: "Metal roofing by Master Roofing Services",
+    details: [
+      "Metal and Colorbond roof installation",
+      "Durable protection with a clean, modern finish",
+      "Flashings and edges detailed for weather performance",
+      "Gutters and accessories fitted as part of the job where needed",
+    ],
+  },
+  {
+    id: "roof-painting",
+    title: "Roof Painting",
+    description:
+      "Professional roof painting to refresh the appearance of your roof and provide an additional layer of protection.",
+    image: "/images/roof-painting.avif",
+    alt: "Roof painting by Master Roofing Services",
+    details: [
+      "Roof cleaned and prepared before painting",
+      "Professional coatings for appearance and extra protection",
+      "Colour options to suit the home",
+      "A refreshed finish that helps the roof weather more evenly",
+    ],
+  },
+  {
+    id: "gutter-installation",
+    title: "Gutter Installation",
+    description:
+      "Professional gutter installation to help manage rainwater and keep your roofing system working effectively.",
+    image: "/images/gutter-installation.png",
+    alt: "Gutter installation by Master Roofing Services",
+    details: [
+      "New gutters sized and set out for the roof",
+      "Downpipes and overflows installed to move water away from the building",
+      "Colour-matched options where available",
+      "Clean lines and a secure, tidy installation",
+    ],
+  },
+  {
+    id: "gutter-cleaning",
+    title: "Gutter Cleaning",
+    description:
+      "Thorough gutter cleaning to remove buildup, improve water flow and help prevent overflow and water damage.",
+    image: "/images/gutter-cleaning.avif",
+    alt: "Gutter cleaning by Master Roofing Services",
+    details: [
+      "Leaves, silt and debris removed from gutters",
+      "Downpipes flushed and checked for blockages",
+      "Overflow and water-damage risk reduced",
+      "Roof drainage left clear and working effectively",
+    ],
+  },
+  {
+    id: "terracotta-roof-restoration",
+    title: "Terracotta Roof Restoration",
+    description:
+      "Specialised restoration for terracotta roofs, helping preserve their appearance, condition and long-term performance.",
+    image: "/images/Terracotta-Roof-Restoration.png",
+    alt: "Terracotta roof restoration by Master Roofing Services",
+    details: [
+      "Specialised terracotta tile repairs and replacement where needed",
+      "Bedding, pointing and ridge work restored",
+      "Appearance and condition of the terracotta roof improved",
+      "Work aimed at protecting long-term performance",
+    ],
+  },
+  {
+    id: "carport-and-patio",
+    title: "Carport and Patio",
+    description:
+      "Carport and patio roofing built to provide shade, weather protection and a clean finish for outdoor living areas.",
+    image: "/images/carport-and-patio.png",
+    alt: "Carport and patio by Master Roofing Services",
+    details: [
+      "Carport and patio roofs designed for the space",
+      "Shade and weather protection for outdoor areas",
+      "A clean finish that sits well with the home",
+      "Secure, tidy installation from structure through to the roof edge",
     ],
   },
 ] as const;
+
+export const homeHighlights = services.map((service) => ({
+  title: service.title,
+  href: `/services#${service.id}`,
+  description: service.description,
+  image: service.image,
+  alt: service.alt,
+}));
+
+export const serviceTags = services.map((service) => ({
+  label: service.title,
+  href: `#${service.id}`,
+}));
 
 export const whyItems = [
   {

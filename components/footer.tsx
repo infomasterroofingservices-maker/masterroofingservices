@@ -4,7 +4,7 @@ import { Logo } from "@/components/logo";
 import { navLinks, phoneHref, services, site } from "@/lib/site";
 
 const linkClass =
-  "flex min-h-9 items-center font-display text-xs font-extrabold uppercase tracking-wide text-white/70 transition-colors hover:text-white sm:min-h-11 sm:text-sm";
+  "flex min-h-9 min-w-0 items-center py-1 font-display text-xs font-extrabold uppercase leading-snug tracking-wide text-white/70 transition-colors hover:text-white sm:min-h-11 sm:text-sm";
 
 export function Footer() {
   const year = new Date().getFullYear();
