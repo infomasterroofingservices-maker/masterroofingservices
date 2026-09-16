@@ -158,7 +158,7 @@ export const services = [
     title: "Carport and Patio",
     description:
       "Carport and patio roofing built to provide shade, weather protection and a clean finish for outdoor living areas.",
-    image: "/images/carport-and-patio.png",
+    image: "/images/carport.png",
     alt: "Carport and patio by Master Roofing Services",
     details: [
       "Carport and patio roofs designed for the space",
