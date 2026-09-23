@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <main id="main-content">
-      <PageHero title="Services" />
+      <PageHero title="Services" subtitle="The services we provide" />
       <Services />
     </main>
   );
