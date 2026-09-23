@@ -8,7 +8,7 @@ export function HomeAbout() {
         <div className="relative lg:flex lg:min-h-[560px] lg:items-center">
           <div className="relative aspect-[4/3] w-full overflow-hidden sm:aspect-[16/11] lg:h-[560px] lg:w-[68%] lg:aspect-auto">
             <Image
-              src="/images/project-1.jpg"
+              src="/projects/14.jpeg"
               alt="Australian home with a well-kept roof and outdoor living areas"
               fill
               sizes="(min-width: 1024px) 70vw, 100vw"

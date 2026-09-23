@@ -34,7 +34,7 @@ export function Hero() {
           Built to last. Built to protect.
         </p>
         <p className="animate-fade-up animate-delay-300 mx-auto mt-3 text-sm text-white/70 sm:text-base">
-          Bradbury, NSW
+        Campbelltown, NSW
         </p>
         <div className="animate-fade-up animate-delay-400 mx-auto mt-7 flex w-full max-w-xs flex-col justify-center gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:flex-wrap">
           <Button href="/contact" size="lg" className="w-full sm:w-auto">

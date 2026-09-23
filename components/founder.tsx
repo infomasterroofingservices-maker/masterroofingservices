@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "@/components/button";
 import { Reveal } from "@/components/reveal";
 import { founder, site } from "@/lib/site";
@@ -17,32 +16,26 @@ export function Founder() {
       </div>
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-x-20 lg:gap-y-10">
-        <Reveal className="relative mx-auto w-full max-w-md pb-8 pl-3 sm:pl-5 sm:pb-0 lg:mx-0 lg:max-w-none">
+        <Reveal className="relative mx-auto w-full max-w-sm pb-2 pl-3 sm:pl-4 lg:mx-0 lg:max-w-md">
           <div
-            className="absolute top-5 left-0 h-[calc(100%-1.25rem)] w-[calc(100%-0.75rem)] border border-lemon sm:top-7 sm:w-[calc(100%-1.25rem)]"
+            className="absolute top-4 left-0 h-[calc(100%-1rem)] w-[calc(100%-0.75rem)] border border-lemon sm:top-5 sm:w-[calc(100%-1rem)]"
             aria-hidden="true"
           />
-          <div className="relative aspect-[3/4] overflow-hidden bg-[#1a1a1a]">
-            <Image
-              src={founder.image}
-              alt={`${founder.name}, ${founder.role} of ${site.name}`}
-              fill
-              sizes="(min-width: 1024px) 38vw, (min-width: 640px) 28rem, 100vw"
-              className="object-cover object-[center_12%]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
-          </div>
-          <div className="absolute -bottom-5 left-5 right-8 bg-lemon px-5 py-4 sm:left-auto sm:-right-4 sm:bottom-8 sm:w-56 sm:px-6 sm:py-5">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#111111]/70">
+          <div className="relative flex min-h-[16rem] flex-col justify-end bg-[#1a1a1a] px-6 py-8 sm:min-h-[18rem] sm:px-8 sm:py-9 lg:min-h-[20rem] lg:px-9 lg:py-10">
+            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-gold">
               {founder.role}
             </p>
-            <p className="mt-1 font-display text-3xl font-extrabold uppercase leading-none tracking-wide text-[#111111] sm:text-4xl">
+            <p className="mt-3 font-display text-[clamp(3rem,10vw,5.5rem)] font-extrabold uppercase leading-[0.82] tracking-tight text-white">
               {founder.name}
+            </p>
+            <span className="mt-5 h-1 w-12 bg-lemon" aria-hidden="true" />
+            <p className="mt-4 max-w-[14rem] font-display text-xs font-extrabold uppercase tracking-[0.18em] text-white/55 sm:text-sm">
+              {site.name}
             </p>
           </div>
         </Reveal>
 
-        <Reveal delay={100} className="pt-6 lg:pt-0">
+        <Reveal delay={100}>
           <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
             Meet the Founder
           </p>

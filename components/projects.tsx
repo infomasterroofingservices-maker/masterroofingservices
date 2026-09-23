@@ -7,13 +7,16 @@ export function Projects() {
   const media = getProjectMedia();
 
   return (
-    <section id="projects" className="relative bg-[#111111] py-20 sm:py-24 lg:py-28">
+    <section
+      id="projects"
+      className="relative border-t border-white/10 bg-[#111111] pt-16 pb-20 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-28"
+    >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <SectionHeading
             light
-            eyebrow="Our Work"
-            title="Our Recent Work"
+            eyebrow="Gallery"
+            title="Project Gallery"
             description="Photos and video from jobs completed by our team — tap any item to view it larger."
           />
         </Reveal>
