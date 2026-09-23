@@ -19,11 +19,6 @@ export type BeforeAfterJob = {
 
 export const beforeAfterJobs: BeforeAfterJob[] = [
   {
-    src: "/beforevsafter/roofinstallation.png",
-    title: "Roof Installation",
-    alt: "Before and after of a new roof installation by Master Roofing Services",
-  },
-  {
     src: "/beforevsafter/metalroofing.png",
     title: "Metal Roofing",
     alt: "Before and after of a metal roof replacement by Master Roofing Services",
