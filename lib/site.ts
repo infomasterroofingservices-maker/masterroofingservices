@@ -6,8 +6,8 @@ export const site = {
     "Professional roofing repairs, restoration, replacement and maintenance from Master Roofing Services. Quality workmanship and dependable service.",
   phone: "0414 947 902",
   emails: ["preet.masterroofingservices@gmail.com"],
-  address: "Bradbury, NSW 2560",
-  serviceArea: "Bradbury & surrounding NSW",
+  address: "Campbelltown, NSW 2560",
+  serviceArea: "Campbelltown & surrounding NSW",
 } as const;
 
 export const navLinks = [
@@ -348,7 +348,7 @@ export const founder = {
   image: "/images/Preet.jpeg",
   quote: "A roof is a long-term investment. If a repair is enough, I will say so.",
   bio: [
-    "Preet started Master Roofing Services so homeowners in Bradbury and across NSW could deal with a local team they can trust — honest about what the job needs, careful with the property, and present from the first inspection through to the finished edge.",
+    "Preet started Master Roofing Services so homeowners in Campbelltown and across NSW could deal with a local team they can trust — honest about what the job needs, careful with the property, and present from the first inspection through to the finished edge.",
     "He stays close to the work. That is why the standard on site is the same standard he holds himself to: quality materials, tidy workmanship and a straight conversation about the best next step.",
   ],
 } as const;
