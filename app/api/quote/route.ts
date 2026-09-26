@@ -7,7 +7,7 @@ import {
   CUSTOMER_CONFIRMATION_SUBJECT,
   renderCustomerConfirmationEmail,
 } from "@/lib/emails/customer-confirmation";
-import { formatFromAddress } from "@/lib/emails/layout";
+import { formatFromAddress, getEmailLogoAttachment } from "@/lib/emails/layout";
 import { parseQuoteBody, validateQuote } from "@/lib/quote";
 
 export const runtime = "nodejs";
@@ -70,6 +70,7 @@ export async function POST(request: Request) {
 
   const resend = new Resend(apiKey);
   const from = formatFromAddress(fromEmail);
+  const attachments = getEmailLogoAttachment();
 
   try {
     const admin = await resend.emails.send({
@@ -78,6 +79,7 @@ export async function POST(request: Request) {
       replyTo: result.data.email,
       subject: ADMIN_QUOTE_SUBJECT,
       html: renderAdminQuoteEmail(result.data),
+      attachments,
     });
 
     if (admin.error) {
@@ -96,6 +98,7 @@ export async function POST(request: Request) {
       replyTo: adminEmail,
       subject: CUSTOMER_CONFIRMATION_SUBJECT,
       html: renderCustomerConfirmationEmail(result.data),
+      attachments,
     });
 
     if (confirmation.error) {

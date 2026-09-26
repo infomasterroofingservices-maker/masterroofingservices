@@ -1,3 +1,6 @@
+import { readFileSync } from "node:fs";
+import path from "node:path";
+
 export function escapeHtml(value: string) {
   return value
     .replace(/&/g, "&amp;")
@@ -11,17 +14,36 @@ export function escapeMultilineHtml(value: string) {
   return escapeHtml(value).replace(/\r\n|\r|\n/g, "<br>");
 }
 
-export function getEmailLogoUrl() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  if (!siteUrl) return null;
+const EMAIL_LOGO_CID = "master-logo";
+
+let emailLogoBase64: string | null | undefined;
+
+function readEmailLogo() {
+  if (emailLogoBase64 !== undefined) return emailLogoBase64;
 
   try {
-    const url = new URL(siteUrl);
-    if (url.protocol !== "http:" && url.protocol !== "https:") return null;
-    return `${url.origin.replace(/\/$/, "")}/logo.png`;
+    emailLogoBase64 = readFileSync(
+      path.join(process.cwd(), "lib", "emails", "logo.png"),
+    ).toString("base64");
   } catch {
-    return null;
+    emailLogoBase64 = null;
   }
+
+  return emailLogoBase64;
+}
+
+export function getEmailLogoAttachment() {
+  const content = readEmailLogo();
+  if (!content) return undefined;
+
+  return [
+    {
+      filename: "logo.png",
+      content,
+      contentType: "image/png",
+      contentId: EMAIL_LOGO_CID,
+    },
+  ];
 }
 
 export function formatFromAddress(fromEmail: string) {
@@ -46,9 +68,9 @@ const brand = {
 };
 
 export function wrapEmail({ title, preview, heading, body }: EmailChrome) {
-  const logoUrl = getEmailLogoUrl();
-  const brandMark = logoUrl
-    ? `<img src="${escapeHtml(logoUrl)}" width="160" alt="Master Roofing Services" style="display:block;border:0;outline:none;text-decoration:none;height:auto;max-width:160px;" />`
+  const logo = readEmailLogo();
+  const brandMark = logo
+    ? `<img src="cid:${EMAIL_LOGO_CID}" width="160" height="80" alt="Master Roofing Services" style="display:block;border:0;outline:none;text-decoration:none;width:160px;height:80px;" />`
     : `<span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;letter-spacing:0.18em;color:${brand.white};text-transform:uppercase;">Master Roofing Services</span>`;
 
   return `<!DOCTYPE html>
