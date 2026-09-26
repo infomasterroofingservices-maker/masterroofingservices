@@ -29,11 +29,11 @@ export function renderAdminQuoteEmail(quote: QuoteInput) {
       ${detailRow("Service Needed", service)}
     </table>
     ${sectionLabel("Message")}
-    <p style="margin:0 0 28px;white-space:normal;">${message}</p>
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+    <p style="margin:0 0 28px;overflow-wrap:anywhere;word-break:break-word;">${message}</p>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
       <tr>
-        <td style="background-color:#F7EB4F;">
-          <a href="${escapeHtml(mailto)}" style="display:inline-block;padding:14px 22px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;color:#111111;">
+        <td align="center" style="background-color:#F7EB4F;">
+          <a href="${escapeHtml(mailto)}" style="display:block;padding:16px 22px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;text-align:center;color:#111111;">
             Reply to Customer
           </a>
         </td>
