@@ -1,6 +1,12 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
+
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
 import { Button } from "@/components/button";
 import {
   quoteServiceOptions,
@@ -27,6 +33,7 @@ export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [formError, setFormError] = useState("");
+  const leadTracked = useRef(false);
 
   function updateField(field: Exclude<QuoteField, "service">, value: string) {
     setValues((current) => ({ ...current, [field]: value }));
@@ -80,6 +87,13 @@ export function ContactForm() {
           payload?.message ?? "Unable to submit your quote request. Please try again.",
         );
         return;
+      }
+
+      if (payload.success === true && !leadTracked.current) {
+        leadTracked.current = true;
+        if (typeof window !== "undefined" && typeof window.fbq === "function") {
+          window.fbq("track", "Lead");
+        }
       }
 
       setSubmitted(true);
